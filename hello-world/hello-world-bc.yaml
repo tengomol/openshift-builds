@@ -10,7 +10,7 @@ spec:
         name: "openjdk:8"
   source: 
     git:
-      uri: "https://github.com/tengomol/openshift-builds.git"
+      uri: "https://github.com/tengomol/openshift-builds"
     contextDir: "hello-world"
   runPolicy: "Serial" 
   output: 
