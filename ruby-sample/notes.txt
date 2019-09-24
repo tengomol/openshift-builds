@@ -4,4 +4,9 @@ oc import-image ruby-20-centos7:latest --from=docker.io/openshift/ruby-20-centos
 
 oc import-image openjdk:8 --from=docker.io/openjdk:8 --confirm
 
+oc import-image adoptopenjdk:11-jre-openj9 --from=docker.io/openjdk:8 --confirm 
 
+FROM adoptopenjdk:11-jre-openj9
+RUN mkdir /opt/app
+COPY japp.jar /opt/app
+CMD ["java", "-jar", "/opt/app/japp.jar"]
