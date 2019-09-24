@@ -6,7 +6,8 @@ oc import-image openjdk:8 --from=docker.io/openjdk:8 --confirm
 
 oc import-image adoptopenjdk:11-jre-openj9 --from=docker.io/adoptopenjdk:11-jre-openj9 --confirm 
 
-FROM adoptopenjdk:11-jre-openj9
-RUN mkdir /opt/app
-COPY japp.jar /opt/app
-CMD ["java", "-jar", "/opt/app/japp.jar"]
+example using oc import-image:
+
+oc import-image openjdk18 --from=registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift --confirm 
+
+oc annotate istag/openjdk18:latest tags=builder

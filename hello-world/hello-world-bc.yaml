@@ -1,20 +1,41 @@
-kind: "BuildConfig"
-apiVersion: "v1"
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
 metadata:
-  name: "hello-world" 
+  labels:
+    build: hello-world
+  name: hello-world
 spec:
-  strategy: 
-    sourceStrategy:
-      from:
-        kind: "ImageStreamTag"
-        name: "openjdk18"
-  source: 
-    git:
-      uri: "https://github.com/tengomol/openshift-builds"
-    contextDir: "hello-world"
-  runPolicy: "Serial" 
-  output: 
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
     to:
-      kind: "ImageStreamTag"
-      name: "hello-world:latest"
-     
+      kind: ImageStreamTag
+      name: 'hello-world:latest'
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    contextDir: hello-world/
+    git:
+      ref: master
+      uri: >-
+        https://github.com/tengomol/openshift-builds
+  strategy:
+    dockerStrategy:
+      env:
+        - name: GIT_SSL_NO_VERIFY
+          value: 'true'
+        - name: GIT_CURL_VERBOSE
+          value: '1'
+        - name: GIT_TRACE
+          value: '1'
+      forcePull: true
+      from:
+        kind: ImageStreamTag
+        name: 'openjdk18:latest'
+      noCache: true
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers: []
+status:
+  lastVersion: 0
