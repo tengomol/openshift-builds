@@ -9,7 +9,7 @@ spec:
   - annotations: null
     from:
       kind: DockerImage
-      name: 172.30.1.1:5000/my-project/hello-world:latest
+      name: 172.30.1.1:5000/my-project/adoptopenjdk:11-jre-openj9
     generation: null
     importPolicy: {}
     name: latest

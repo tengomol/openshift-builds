@@ -7,7 +7,7 @@ spec:
     sourceStrategy:
       from:
         kind: "ImageStreamTag"
-        name: "openjdk:8"
+        name: "adoptopenjdk:11-jre-openj9"
   source: 
     git:
       uri: "https://github.com/tengomol/openshift-builds"
