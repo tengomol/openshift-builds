@@ -30,9 +30,6 @@ spec:
         - name: GIT_TRACE
           value: '1'
       forcePull: true
-      from:
-        kind: ImageStreamTag
-        name: 'openjdk18:latest'
       noCache: true
     type: Docker
   successfulBuildsHistoryLimit: 5
