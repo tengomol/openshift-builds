@@ -1,0 +1,5 @@
+Import image from dockerhub:
+
+oc import-image ruby-20-centos7:latest --from=docker.io/openshift/ruby-20-centos7 --confirm
+
+
