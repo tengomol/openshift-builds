@@ -5,6 +5,7 @@ RUN mkdir -p /opt/redis
 RUN cd /opt/redis
 RUN wget http://download.redis.io/releases/redis-5.0.5.tar.gz
 RUN tar -xvzf redis-5.0.5.tar.gz
+RUN cd redis-5.0.5
 
  
 
