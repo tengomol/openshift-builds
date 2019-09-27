@@ -1,0 +1,38 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    build: redis
+  name: redis
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'openshift-redis:5.0.5'
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    contextDir: openshift-redis/
+    git:
+      ref: master
+      uri: >-
+        https://github.com/tengomol/openshift-builds
+  strategy:
+    dockerStrategy:
+      env:
+        - name: GIT_SSL_NO_VERIFY
+          value: 'true'
+        - name: GIT_CURL_VERBOSE
+          value: '1'
+        - name: GIT_TRACE
+          value: '1'
+      forcePull: true
+      noCache: true
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers: []
+status:
+  lastVersion: 0

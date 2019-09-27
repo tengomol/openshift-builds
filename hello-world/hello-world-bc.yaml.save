@@ -1,0 +1,20 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "hello-world" 
+spec:
+  strategy: 
+    sourceStrategy:
+      from:
+        kind: "ImageStreamTag"
+        name: "openjdk:8"
+  source: 
+    git:
+      uri: "https://github.com/tengomol/openshift-builds.git"
+  
+runPolicy: "Serial" 
+  output: 
+    to:
+      kind: "ImageStreamTag"
+      name: "hello-world:latest"
+     

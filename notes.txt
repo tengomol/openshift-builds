@@ -2,6 +2,8 @@ Import image from dockerhub:
 
 oc import-image ruby-20-centos7:latest --from=docker.io/openshift/ruby-20-centos7 --confirm
 
+oc import-image centos:centos7 --from=docker.io/centos:centos7 --confirm
+
 oc import-image openjdk:8 --from=docker.io/openjdk:8 --confirm
 
 oc import-image adoptopenjdk:11-jre-openj9 --from=docker.io/adoptopenjdk:11-jre-openj9 --confirm 
