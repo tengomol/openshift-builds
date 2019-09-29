@@ -10,8 +10,4 @@ RUN cd /opt/redis/redis-5.0.5 \
     && make install
 EXPOSE 6379
 RUN redis-server -v
-# Cleanup
-    # Remove local repository package files
-RUN apt-get -y clean
 ENTRYPOINT redis-server
-CMD bash
