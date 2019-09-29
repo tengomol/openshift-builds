@@ -8,9 +8,10 @@ RUN cd /opt/redis \
 RUN cd /opt/redis/redis-5.0.5 \
     && make \
     && make install
-RUN REDIS_PORT=6379 \
-		 REDIS_CONFIG_FILE=/etc/redis/redis_6379.conf \
- 		 REDIS_LOG_FILE=/var/log/redis_6379.log \
- 		 REDIS_DATA_DIR=/var/lib/redis/redis_6379 \
- 		 REDIS_EXECUTABLE=`command -v redis-server` /opt/redis/redis-5.0.5/utils/install_server.sh
 EXPOSE 6379
+RUN redis-server -v
+# Cleanup
+    # Remove local repository package files
+RUN apt-get -y clean
+ENTRYPOINT redis-server
+CMD bash
