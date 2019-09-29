@@ -13,3 +13,4 @@ RUN REDIS_PORT=6379 \
  		 REDIS_LOG_FILE=/var/log/redis_6379.log \
  		 REDIS_DATA_DIR=/var/lib/redis/redis_6379 \
  		 REDIS_EXECUTABLE=`command -v redis-server` /opt/redis/redis-5.0.5/utils/install_server.sh
+EXPOSE 6379

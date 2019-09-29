@@ -2,8 +2,8 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   labels:
-    build: redis
-  name: redis
+    build: openshift-redis
+  name: openshift-redis
 spec:
   failedBuildsHistoryLimit: 5
   nodeSelector: null
