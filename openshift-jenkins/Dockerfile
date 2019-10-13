@@ -6,4 +6,5 @@ RUN mkdir /opt/jenkins \
     && wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 EXPOSE 8080
 RUN export JENKINS_HOME=/opt/jenkins
-RUN java -jar /opt/jenkins/jenkins.war    
+ENTRYPOINT ["java", "-jar", "/opt/jenkins/jenkins.war"]
+CMD []  
