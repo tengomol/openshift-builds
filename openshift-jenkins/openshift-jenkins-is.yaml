@@ -9,7 +9,7 @@ spec:
   - annotations: null
     from:
       kind: DockerImage
-      name: 172.30.1.1:5000/myproject/openjdk18:latest
+      name: 172.30.1.1:5000/myproject/centos7:centos7
     generation: null
     importPolicy: {}
     name: 5.0.5
