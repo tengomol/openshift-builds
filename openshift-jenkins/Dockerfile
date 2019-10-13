@@ -1,10 +1,10 @@
 FROM 172.30.1.1:5000/myproject/centos:centos7
 RUN yum -y update
 RUN yum install -y java-1.8.0-openjdk wget
-RUN useradd -ms /bin/bash jenkins
+RUN adduser jenkins root
 RUN mkdir -p /opt/jenkins
-RUN chmod -R "g+rwX" /opt/jenkins \
-    && chown -R jenkins:jenkins /opt/jenkins
+RUN chmod -R 775 /opt/jenkins \
+    && chown -R jenkins:root /opt/jenkins
 USER jenkins
 WORKDIR /opt/jenkins
 RUN wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
