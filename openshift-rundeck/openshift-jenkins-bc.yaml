@@ -2,20 +2,20 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   labels:
-    build: openshift-jenkins
-  name: openshift-jenkins
+    build: openshift-rundeck
+  name: openshift-rundeck
 spec:
   failedBuildsHistoryLimit: 5
   nodeSelector: null
   output:
     to:
       kind: ImageStreamTag
-      name: 'openshift-jenkins:stable-latest'
+      name: 'openshift-rundeck:3.1.2'
   postCommit: {}
   resources: {}
   runPolicy: Serial
   source:
-    contextDir: openshift-jenkins/
+    contextDir: openshift-rundeck/
     git:
       ref: master
       uri: >-
