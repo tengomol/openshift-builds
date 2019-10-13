@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  creationTimestamp: null
+  generation: 1
+  name: openshift-jenkins
+spec:
+  tags:
+  - annotations: null
+    from:
+      kind: DockerImage
+      name: 172.30.1.1:5000/myproject/openjdk18:latest
+    generation: null
+    importPolicy: {}
+    name: 5.0.5
+status:
+  dockerImageRepository: ""
