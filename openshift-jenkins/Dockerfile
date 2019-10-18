@@ -10,4 +10,5 @@ WORKDIR /opt/jenkins
 RUN wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 EXPOSE 8080
 ENV JENKINS_HOME=/opt/jenkins
+ENV JENKINS_PASSWORD=admin
 ENTRYPOINT ["java", "-jar", "/opt/jenkins/jenkins.war"]
